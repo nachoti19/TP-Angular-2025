@@ -1,0 +1,8 @@
+
+  <li class="list-group"><span class="badge text-bg-primary">Stock: {{ this.max }}</span></li>
+  <div class="btn-group grid" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-success" (click)="downQuantity(quantity)">-</button>
+    <input type="text" [value]="quantity" id="inputButton">
+    <button type="button" class="btn btn-success" (click)="upQuantity(quantity)">+</button>
+  </div>
+

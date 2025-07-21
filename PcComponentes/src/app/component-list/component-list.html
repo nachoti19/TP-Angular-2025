@@ -1,0 +1,20 @@
+
+@for(components of component; track components.nombre){
+<div class="card cardComponents g-col-6" style="width: 18rem;">
+  <img [src]="components.image" [alt]="components.nombre">
+  <div class="card-body cardComponents g-col-6">
+    <h5 class="card-title">{{ components.nombre }}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item ren">Tipo: {{components.tipo}}</li>
+    <li class="list-group-item ren">{{components.precio | currency}}</li>
+    <li class="list-group-item ren">
+      @if(components.stock == 0){
+        <li class="list-group"><span class="badge text-bg-danger">SIN STOCK</span></li>
+      }@else{
+        <app-input-number [(quantity)]="components.quantity" [max]="components.stock"></app-input-number>
+      }
+    </li>
+  </ul>
+</div>
+}
